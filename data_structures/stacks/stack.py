@@ -11,9 +11,8 @@ class Stack:
     https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
     """
 
-    def __init__(self, limit=10):
+    def __init__(self):
         self.stack = []
-        self.limit = limit
 
     def __bool__(self):
         return bool(self.stack)
@@ -23,8 +22,6 @@ class Stack:
 
     def push(self, data):
         """ Push an element to the top of the stack."""
-        if len(self.stack) >= self.limit:
-            raise StackOverflowError
         self.stack.append(data)
 
     def pop(self):
